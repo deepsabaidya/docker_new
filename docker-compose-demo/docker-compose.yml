@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+
+  web:
+    image: nginx:latest
+    container_name: web_container
+    ports:
+      - "8080:80"
+
+  database:
+    image: mysql:8.0
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+
+  redis:
+    image: redis:latest
+    container_name: redis_container
